@@ -14,16 +14,19 @@ body{
     font-family: 'Source Code Pro', monospace;
 }
 form{
-    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-    opacity: 0.9;
+    background-color: rgba(250, 250, 250, 0.096);
     color: rgba(0, 0, 0, 0.986);
-    padding: 80px;
+    padding: 35px;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    min-width: 40%;
-    min-height: 50%;
+    min-width: 60%;
     box-shadow: 1px 1px 5px rgb(24, 23, 23);
+}
+@media(max-width: 900px){
+    form{
+        min-width: 80%;
+    }
 }
 .invalid{
     border: 1px solid red;
@@ -41,7 +44,7 @@ input{
     outline: none;
     border: 2px solid black;
     margin: 15px 15px 15px 0;
-    width: 70%;
+    min-width: 70%;
 }
 input::placeholder{
     color: rgba(255, 255, 255, 0.658);
@@ -70,19 +73,24 @@ button:active{
     box-shadow: 0 3px 0 rgba(0, 0, 0, 0.158);
 }
 #indication-username, #indication-password{
-    font-size: 15px;
+    font-size: 12px;
     margin-bottom: 15px;
-    margin-left: 15px;
     font-style: italic;
     visibility: hidden;
+    text-align: center;
+    font-weight: 600;
 }
 #submit-btn-indication{
     visibility: hidden;
-    font-size: 15px;
+    font-size: 12px;
     margin-top: 15px;
     font-style: italic;
-    margin-left: 15px;
+    text-align: center;
+    font-weight: 600;
 }
 .form-elements{
-    margin-left: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

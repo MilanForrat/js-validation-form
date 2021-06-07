@@ -1,4 +1,5 @@
 let form = document.querySelector('#form');
+let usernameRegex = /^[A-Za-z0-9 ]+$/;
 let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
 // récupère les éléments HTML qui ont l'attribu name et la valeur ...
@@ -26,7 +27,7 @@ function validate(e){
         if(passwordRegex.test(target.value)){
             target.classList.add('valid');
             target.classList.remove('invalid');
-            passwordIndication.style.visibility = "hidden";
+            passwordIndication.innerHTML = "<img src='./check.png'>"
             passwordStatus = true;
         }
         // sinon class invalid
@@ -34,16 +35,16 @@ function validate(e){
             target.classList.add('invalid');
             target.classList.remove('valid');
             passwordIndication.style.visibility = "visible";
-            passwordIndication.innerHTML = "*le mot de passe doit comporté au minimum : <br> 1 majuscule, 1 chiffre, et 8 caractères";
+            passwordIndication.innerHTML = "Le mot de passe doit comporté au minimum : <br> 1 majuscule, 1 chiffre, et 8 caractères";
         }
         console.log(passwordStatus);
         return passwordStatus;   
     }
     if(target.name == "username"){
-        if(target.value.length >= 5){
+        if(target.value.length >= 5 && usernameRegex.test(target.value)){
             target.classList.add('valid');
             target.classList.remove('invalid');
-            usernameIndication.style.visibility = "hidden";
+            usernameIndication.innerHTML = "<img src='./check.png'>"
             usernameStatus = true;
         }
         // sinon class invalid
@@ -51,7 +52,7 @@ function validate(e){
             target.classList.add('invalid');
             target.classList.remove('valid');
             usernameIndication.style.visibility = "visible";
-            usernameIndication.innerHTML = "*l'identifiant doit comporté au minimum 5 caractères";
+            usernameIndication.innerHTML = "L'identifiant doit comporté au minimum 5 caractères <br> et aucun caractère spécial";
         }
         console.log(usernameStatus);
         return usernameStatus;  
@@ -60,12 +61,12 @@ function validate(e){
 // blocage de la soumission des données pour le projet
 form.addEventListener('submit', function (e){
     e.preventDefault();  
-    if(usernameStatus ==true && passwordStatus == true){
-        alert("Connexion en cours");
+    if(usernameStatus == true && passwordStatus == true){
+        alert("Connexion en cours...");
     } 
 });
 submitBtn.addEventListener('mouseenter', function (e){
-    if(usernameStatus ==true && passwordStatus == true){
+    if(usernameStatus == true && passwordStatus == true){
         submitBtn.style.cursor ="pointer";
     }
     else{
