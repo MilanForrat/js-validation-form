@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input:invalid{
+    border: 1px solid red;
+}
+input:valid{
+    border: 1px solid green;
+}
+
+input{
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    background-color: rgba(227, 227, 238, 0.473);
+    outline: none;
+}
+button{
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(227, 227, 238, 0.473);
+    outline: none;
+    font-weight: 600;
+}
