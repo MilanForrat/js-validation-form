@@ -19,14 +19,17 @@
         ex : [0-9]{6,}            => ici on a que des chiffres et il faut au minimum 7 caract'
          pattern="[0-9]+"
         -->
-        <label for="username"><strong>Nom d'utilisateur :</strong></label>
-        <input type="text" id="input-username" name="username" placeholder="Saisissez votre identifiant..." required>
-        <p id="indication-username">e</p>
-        <label for="password"><strong>Mot de passe :</strong></label>
-        <input type="password" id="input-password" name="password" placeholder="Saisissez votre mot de passe..." required>
-        <p id="indication-password">e <br>e</p>
-
-        <button type="submit">Valider</button>
+        <div class="form-elements">
+            <label for="username"><strong>Nom d'utilisateur :</strong></label>
+            <input type="text" id="input-username" name="username" placeholder="Saisissez votre identifiant..." required>
+            <p id="indication-username">e</p>
+            <label for="password"><strong>Mot de passe :</strong></label>
+            <br>
+            <input type="password" id="input-password" name="password" placeholder="Saisissez votre mot de passe..." required>
+            <p id="indication-password">e <br>e</p>
+        </div>
+        <button type="submit" id="submit-btn">Valider</button>
+        <p id="submit-btn-indication">e</p>
     </form>
     <script src="./app.js"></script>
 </body>
